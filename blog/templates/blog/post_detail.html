@@ -24,7 +24,7 @@
     {%if user.is_authenticated or comment.approved_comment%}
         {{comment.create_date}}
         {%if not comment.approved_comment %}
-            <a href="{%url 'comment_remove' pk=comment.pk%}" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="{%url 'comment_remove' pk=comment.pk%}" class="btn btn-primary"><span class="glyphicon glyphicon-remove"></span></a>
             <a href="{%url 'comment_approve' pk=comment.pk%}" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span></a>
         {%endif%}
         <p>{{comment.text|safe|linebreaksbr}}</p>
